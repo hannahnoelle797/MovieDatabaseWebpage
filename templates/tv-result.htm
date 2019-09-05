@@ -1,0 +1,13 @@
+<article class="result">
+	<div class="result-overlay">
+		<a class="result-detail-link" data-id={{id}} data-type={{media_type}}>Details</a>
+	</div>
+	{{#poster_path}}
+		<img class="result-image" alt="result-image" src="https://image.tmdb.org/t/p/original/{{poster_path}}">
+	{{/poster_path}}
+	{{^poster_path}}
+		<img class="result-image" alt="result-image" src="./images/noimage.png">
+	{{/poster_path}}
+	<p class="result-title">{{name}}</p>
+	<p class="result-released">First Aired: {{first_air_date}}</p>
+</article>

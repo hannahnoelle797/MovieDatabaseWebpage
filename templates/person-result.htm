@@ -1,0 +1,13 @@
+<article class="result">
+	<div class="result-overlay">
+		<a class="result-detail-link" data-id={{id}} data-type={{media_type}}>Details</a>
+	</div>
+	{{#profile_path}}
+		<img class="result-image" alt="result-image" src="https://image.tmdb.org/t/p/original/{{profile_path}}" >
+	{{/profile_path}}
+	{{^profile_path}}
+		<img class="result-image" alt="result-image" src="./images/noimage.png">
+	{{/profile_path}}
+	<p class="result-title">{{name}}</p>
+	<p class="result-released">Popularity: {{popularity}}</p>
+</article>

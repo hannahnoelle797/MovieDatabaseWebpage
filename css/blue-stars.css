@@ -1,0 +1,147 @@
+
+/* Consistant theme elements */
+
+header {
+	background: url("../images/stars.jpg") no-repeat center center fixed;
+	color: rgb(236, 240, 241);
+}	
+ 
+nav {
+     background-color: rgba(217, 217, 217, 0.3);
+	 color: black;
+}
+
+footer {
+      background-color: rgba(217, 217, 217, 0.3);
+	  color: black;
+}
+	
+#theme_switch {
+	font-size: 1em;
+}
+
+/* Light stars theme */	
+	
+body.light_stars {
+	
+	background-color: rgb(54, 95, 124);
+	color: black;
+	-webkit-transition: background-color 2s, color 1s;
+	transition: background-color 2s, color 1s;
+}
+
+body.light_stars a.menu-item-link {
+	color: black;
+}
+
+body.light_stars footer {
+	color: black;
+	-webkit-transition: color 1s;
+	transition: color 2s;
+}
+	
+body.light_stars main {	
+	  background-color: rgb(54, 95, 124);
+	  -webkit-transition: background-color 2s;
+	  transition: background-color 2s;
+}
+
+body.light_stars #results {
+	    background-color: rgb(54, 95, 124);
+		-webkit-transition: background-color 2s;
+		transition: background-color 2s;
+}
+		
+body.light_stars #search {
+	  background-color: rgb(54, 95, 124);
+	  -webkit-transition: background-color 2s;
+	  transition: background-color 2s;
+}
+
+body.light_stars #search a {
+	color: black;
+}
+
+body.light_stars #search a:hover {
+	color: 	white;
+}
+
+body.light_stars #search a.selected-view {
+	color: 	rgb(46, 184, 50);
+}
+
+body.light_stars #pagination a {
+	 background-color: rgba(217, 217, 217, 0.4);
+	 color: black;
+	 -webkit-transition: background-color 2s;
+	  transition: background-color 2s;
+}
+
+body.light_stars #pagination a.selected-link {
+	background-color: rgb(70, 160, 73);
+	color: white;
+}
+
+/* Dark stars theme */	
+	
+body.dark_stars {	
+	background-color: rgb(12, 29, 37);
+	color: rgb(236, 240, 241);
+	-webkit-transition: background-color 2s, color 1s;
+	transition: background-color 2s, color 1s;
+}
+
+body.dark_stars a.menu-item-link {
+	color: rgb(236, 240, 241);
+	-webkit-transition: color 1s;
+	transition: color 2s;
+}
+
+body.dark_stars footer {
+	color: rgb(236, 240, 241);
+	-webkit-transition: color 1s;
+	transition: color 2s;
+}
+
+body.dark_stars main {	
+	  background-color: rgb(12, 29, 37);
+	  -webkit-transition: background-color 2s;
+	  transition: background-color 2s;
+}
+
+body.dark_stars #results {
+	    background-color: rgb(12, 29, 37);
+		-webkit-transition: background-color 2s;
+		transition: background-color 2s;
+}
+		
+body.dark_stars #search {
+	  background-color: rgb(12, 29, 37);
+	  -webkit-transition: background-color 2s;
+	  transition: background-color 2s;
+}	
+
+body.dark_stars #search a {
+	color: rgb(236, 240, 241);
+}
+
+body.dark_stars #search a:hover {
+	color: rgb(98, 126, 132);
+}
+
+body.dark_stars #search a.selected-view {
+	color: rgb(70, 160, 73);
+}
+
+body.dark_stars #pagination a {
+	 background-color: rgba(217, 217, 217, 0.2);
+	 color: rgb(236, 240, 241);
+	-webkit-transition: color 1s;
+	transition: color 1s;
+}
+
+body.dark_stars #pagination a.selected-link {
+	background-color: rgba(70, 160, 73, 0.5);
+	color: white;
+}
+	

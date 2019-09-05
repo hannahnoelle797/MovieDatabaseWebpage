@@ -1,0 +1,53 @@
+<article class="detail">
+	{{#poster_path}}
+		<img class="detail-image" alt="detail-image" src="https://image.tmdb.org/t/p/original/{{poster_path}}">
+	{{/poster_path}}
+	{{^poster_path}}
+		<img class="detail-image" alt="detail-image" src="./images/noimage.png">
+	{{/poster_path}}
+	<div class="detail-container">
+		<div class="detail-container-links">
+			<a class="detail-favorite" data-id="{{id}}" data-type="tv" data-append="true" title=""></a>
+			<a class="detail-watchlist" data-id="{{id}}" data-type="tv" data-append="true" title=""></a>
+			<a class="detail-close" title="Close"><i class="fas fa-times"></i></a>
+		</div>
+		<div class="detail-container-info">
+			<h2>{{name}}</h2>
+			{{#overview}}
+				<br>
+				<p><strong>Overview:</strong></p>
+				<p>{{{overview}}}</p>
+			{{/overview}}
+			<br>
+			<p><strong>Cast:</strong></p>
+			{{#cast}}
+				~ <a class="detail-cast-link" data-id={{#id}}{{id}}{{/id}}>{{name}} ~ {{character}}</a><br>
+			{{/cast}}
+			<br>
+			<p>First Aired: {{first_air_date}}</p>
+			<p>Total Seasons: {{number_of_seasons}}</p>
+			<p>Total Episodes: {{number_of_episodes}}</p>
+			<p>Status: {{status}}</p>
+			{{#last_episode_to_air}}
+				<br>
+				<p><strong>Last Episode: </strong></p>
+				<p>Season {{last_episode_to_air.season_number}} Episode {{last_episode_to_air.episode_number}}</p>
+				<p>Date: {{last_episode_to_air.air_date}}</p>
+				<p>Title: {{last_episode_to_air.name}}</p>
+				<p>Overview: {{last_episode_to_air.overview}}</p>
+			{{/last_episode_to_air}}
+			{{#next_episode_to_air}}
+				<br>
+				<p><strong>Next Episode: </strong></p>
+				<p>Season {{next_episode_to_air.season_number}} Episode {{next_episode_to_air.episode_number}}</p>
+				<p>Date: {{next_episode_to_air.air_date}}</p>
+				<p>Title: {{next_episode_to_air.name}}</p>
+				<p>Overview: {{next_episode_to_air.overview}}</p>
+			{{/next_episode_to_air}}
+			{{#homepage}}
+				<br>
+				<a target="_blank" href={{homepage}}>{{homepage}}</a>
+			{{/homepage}}
+		</div>
+	</div>
+</article>

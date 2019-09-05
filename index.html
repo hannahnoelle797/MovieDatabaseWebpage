@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+
+
+<head>
+
+	<meta charset="UTF-8">
+	<title>Movie Databse Project - Group #1</title>
+	
+	<link href="css/reset.css" rel="stylesheet" type="text/css">
+	<link href="css/default.css" rel="stylesheet" type="text/css">
+	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="css/brands.min.css" rel="stylesheet" type="text/css">
+	<link href="css/regular.min.css" rel="stylesheet" type="text/css">
+	<link href="css/solid.min.css" rel="stylesheet" type="text/css">
+	<link href="css/blue-stars.css" rel="stylesheet" type="text/css">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="./javascript/mustache.js"></script>
+	<script src="./javascript/default.js"></script>
+	<script src="./javascript/session.js"></script>
+	
+</head>
+
+
+<body class="dark_stars">
+
+<!-- Header -->
+
+	<header>
+		<h1>#TheMovieDB</h1>
+		<a id="theme-switch-link"><i class="fas fa-toggle-on"></i>Dark Theme</a>
+	</header>
+
+
+<!-- Navigation -->
+
+	<nav>
+	
+		<ul id="menu">
+			<li class="menu-item"><a class="menu-item-link"><i class="fas fa-film" aria-hidden="true"></i>Movies</a>
+				<ul class="menu-dropdown">
+					<li class="menu-subitem"><a class="menu-subitem-link" data-parent="movie" data-index="0">Popular</a></li>
+					<li class="menu-subitem"><a class="menu-subitem-link" data-parent="movie" data-index="1">Upcoming</a></li>
+					<li class="menu-subitem"><a class="menu-subitem-link" data-parent="movie" data-index="2">Now Playing</a></li>
+					<li class="menu-subitem"><a class="menu-subitem-link" data-parent="movie" data-index="3">Top Rated</a></li>
+				</ul>
+			</li>
+			<li class="menu-item"><a class="menu-item-link"><i class="fas fa-tv" aria-hidden="true"></i>TV Shows</a>
+				<ul class="menu-dropdown">
+					<li class="menu-subitem"><a class="menu-subitem-link" data-parent="tv" data-index="0">Airing Today</a></li>
+					<li class="menu-subitem"><a class="menu-subitem-link" data-parent="tv" data-index="1">Currently Airing</a></li>
+					<li class="menu-subitem"><a class="menu-subitem-link" data-parent="tv" data-index="2">Popular</a></li>
+					<li class="menu-subitem"><a class="menu-subitem-link" data-parent="tv" data-index="3">Top Rated</a></li>
+				</ul>
+			</li>
+			<li class="menu-item"><a class="menu-item-link"><i class="fas fa-user" aria-hidden="true"></i>People</a>
+				<ul class="menu-dropdown">
+					<li class="menu-subitem"><a class="menu-subitem-link" data-parent="people" data-index="0">Popular</a></li>
+				</ul>
+			</li>
+			<li id="menu-item-favorites" class="menu-item" style="display:none"><a class="menu-item-link"><i class="fas fa-star" aria-hidden="true"></i>Favorites</a>
+				<ul class="menu-dropdown">
+					<li class="menu-subitem"><a class="menu-subitem-link" data-parent="favorite" data-index="0">Movies</a></li>
+					<li class="menu-subitem"><a class="menu-subitem-link" data-parent="favorite" data-index="1">TV Shows</a></li>
+				</ul>
+			</li>
+			<li id="menu-item-watchlist" class="menu-item" style="display:none"><a class="menu-item-link"><i class="fas fa-bookmark" aria-hidden="true"></i>Watch List</a>
+				<ul class="menu-dropdown">
+					<li class="menu-subitem"><a class="menu-subitem-link" data-parent="watchlist" data-index="0">Movies</a></li>
+					<li class="menu-subitem"><a class="menu-subitem-link" data-parent="watchlist" data-index="1">TV Shows</a></li>
+				</ul>
+			</li>
+		</ul>
+		
+		<ul id="dashboard">
+			<li id="menu-item-login" class="menu-item">
+				<a id="menu-item-link-login" class="menu-item-link" title="Login">
+					<i class="fas fa-sign-in-alt" aria-hidden="true"></i>
+				</a>
+			</li>
+			<li id="menu-item-logout" class="menu-item" style="display:none">
+				<a id="menu-item-link-logout" class="menu-item-link" title="Logout">
+					<i class="fas fa-sign-out-alt" aria-hidden="true"></i>
+				</a>
+			</li>
+		</ul>
+	
+	</nav>
+
+
+<!-- Main Content -->
+
+	<main>
+		
+		<section id="search">
+			<form id="search-form">
+				<select id="search-category">
+					<option>All</option>
+					<option>Movies</option>
+					<option>TV Shows</option>
+					<option>People</option>
+				</select>
+				<input id="search-input" type="text" placeholder="Search ...">
+				<button id="search-button" type="button">Search</button>
+			</form>
+			<div id="view">
+				<a><i class="fas fa-list" aria-hidden="true"></i>List</a>
+				<a class="selected-view"><i class="fas fa-th" aria-hidden="true"></i>Grid</a>
+			</div>
+		</section>
+		
+		<section id="results" class="grid">
+			<!-- TEMPLATE
+			<article class="result">
+				<div class="result-overlay">
+					<a class="result-detail-link" data-id="" data-type="">Details</a>
+				</div>
+				<img class="result-image" alt="result-image" src="">
+				<p class="result-title"></p>
+				<p class="result-released">Released: </p>
+			</article>
+			-->
+		</section>
+		
+		<section id="details" class="overlay" style="display:none;">
+			<!-- TEMPLATE
+			<article class="detail">
+				<img class="detail-image" alt="detail-image" src="">
+				<div class="detail-container">
+					<div class="detail-container-links">
+						<a class="detail-favorite" title="Favorite"><i class="far fa-star"></i></a>
+						<a class="detail-watchlist" title="Watch List"><i class="far fa-bookmark"></i></a>
+						<a class="detail-close" title="Close"><i class="fas fa-times"></i></a>
+					</div>
+					<div class="detail-container-info">
+					</div>
+				</div>
+			</article>
+			-->
+		</section>
+		
+		<section id="details-cast" class="overlay" style="display:none;">
+			<!-- TEMPLATE
+			<article class="detail">
+				<img class="detail-image" alt="detail-image" src="">
+				<div class="detail-container">
+					<div class="detail-container-links">
+						<a class="detail-cast-close" title="Back"><i class="fas fa-undo"></i></a>
+					</div>
+					<div class="detail-container-info">
+					</div>
+				</div>
+			</article>
+			-->
+		</section>
+		
+		<section id="pagination" style="display:none">
+			<a id="first-page" title="First Page">&lt;&lt;</a>
+			<a id="prev-page">Prev</a>
+			<div id="pagination-pages">
+			</div>
+			<a id="next-page">Next</a>
+			<a id="last-page" title="Last Page">&gt;&gt;</a>
+		</section>
+			
+	</main>
+	
+	
+<!-- Footer -->
+
+	<footer>
+		<p>Website developed by: Aaron Tomason, Blake Howe, Charles Gaar, Elise Maloney, &amp; Hannah Duncan. Copyright &copy; 2018. All Rights Reserved.</p>
+	</footer>
+
+</body>
+
+
+</html>

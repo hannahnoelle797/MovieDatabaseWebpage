@@ -1,0 +1,33 @@
+<article class="detail">
+	{{#profile_path}}
+		<img class="detail-image" alt="detail-image" src="https://image.tmdb.org/t/p/original/{{profile_path}}">
+	{{/profile_path}}
+	{{^profile_path}}
+		<img class="detail-image" alt="detail-image" src="./images/noimage.png">
+	{{/profile_path}}
+	<div class="detail-container">
+		<div class="detail-container-links">
+			<a class="detail-cast-close" title="Close"><i class="fas fa-undo"></i></a>
+		</div>
+		<div class="detail-container-info">
+			<h2>{{name}}</h2>
+			{{#biography}}
+				<br>
+				<p><strong>Biography:</strong> {{{biography}}}</p>
+			{{/biography}}
+			{{#birthday}}
+				<p><strong>Birthday:</strong> {{birthday}}</p>
+			{{/birthday}}
+			{{#place_of_birth}}
+				<p><strong>Place of Birth:</strong> {{place_of_birth}}</p>
+			{{/place_of_birth}}
+			{{#deathday}}
+				<p><strong>Deathday:</strong> {{deathday}}</p>
+			{{/deathday}}
+			{{#homepage}}
+				<br>
+				<a target="_blank" href={{homepage}}>{{homepage}}</a>
+			{{/homepage}}
+		</div>
+	</div>
+</article>
